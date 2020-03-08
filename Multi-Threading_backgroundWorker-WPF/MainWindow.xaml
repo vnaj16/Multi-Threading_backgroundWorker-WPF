@@ -6,7 +6,15 @@
         xmlns:local="clr-namespace:Multi_Threading_backgroundWorker_WPF"
         mc:Ignorable="d"
         Title="MainWindow" Height="450" Width="800">
-    <Grid>
-        
-    </Grid>
+    <DockPanel Margin="10">
+        <DockPanel DockPanel.Dock="Top">
+            <Button Name="btnDoSynchronousCalculation" Click="btnDoSynchronousCalculation_Click" DockPanel.Dock="Left" HorizontalAlignment="Left">Synchronous (same thread)</Button>
+            <Button Name="btnDoAsynchronousCalculation" Click="btnDoAsynchronousCalculation_Click" DockPanel.Dock="Right" HorizontalAlignment="Right">Asynchronous (worker thread)</Button>
+            <Button Name="btnCancel" DockPanel.Dock="Right"  HorizontalAlignment="Right" Width="60" Margin="0,0,10,0" Click="btnCancel_Click">Cancel</Button>
+        </DockPanel>
+        <ProgressBar DockPanel.Dock="Bottom" Height="18" Name="pbCalculationProgress" />
+
+        <ListBox Name="lbResults" Margin="0,10" />
+
+    </DockPanel>
 </Window>
